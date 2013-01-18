@@ -57,6 +57,7 @@
 			</p>
 		</xsl:if>
 		<xsl:copy-of select="excerpt/node()" />
+		<p><a class="readmore" href="{$root}/news/view/{title/@handle}">Read more&#8230;</a></p>
 	</article>
 </xsl:template>
 
