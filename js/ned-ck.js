@@ -1,0 +1,4 @@
+// GLOBAL
+/*global Modernizr */// change opacity of the topbar based on distance
+// the navbar is scrolled from the top of the screen
+function opacityAndShadow(){var e=$(window).scrollTop(),t=$(".nav").offset().top,n=t-e,r=-n/600+7/6;$(".topbar").css("opacity",r);$(".nav").hasClass("is-sticky")&&$(".nav").css("box-shadow","0px 5px 5px rgba(200,200,200,0.2)")}$(document).ready(function(){$("#sticker").sticky({topSpacing:100});if(!Modernizr.touch){$(".archivepin").sticky({topSpacing:160});$(".mugshot").sticky({topSpacing:110});$(".stickit").sticky({topSpacing:160})}$(".cyclethis").cycle({timeout:1e4});$(window).scroll(function(){opacityAndShadow()})});

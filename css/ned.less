@@ -1,0 +1,336 @@
+// media query hack for onmediaquery.js
+html {
+    font-family: 'mobile';
+}
+
+* html { /* IE6 */
+    font-family: 'desktop'
+}
+
+*+html { /* IE7 */
+    font-family: 'desktop'
+}
+
+//@media \0screen {
+//    html {  /* IE8 */
+//        font-family: 'desktop'
+//    }
+//}
+// maybe add this last one directly to the CSS at the end?
+// end media query hack
+
+@highlightcolor: #004788;
+@menuheight: 52px;
+@fontfamilyserif: "museo", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontfamilysans: "museo-sans", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@boldweight: 500;
+@regularweight: 100;
+@blackweight: 900;
+
+.transition (@transition) {
+	-webkit-transition: @transition;  
+	-moz-transition:    @transition;
+	-ms-transition:     @transition; 
+	-o-transition:      @transition;  
+}
+.box-shadow(@style: inset 0 0 10px rgba(55, 55, 55, 0.5)){
+  box-shadow: @style;
+  -webkit-box-shadow: @style;
+  -moz-box-shadow: @style;
+}
+.border-radius(@radius: 0) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+body {
+	background: url(../assets/images/dust.png) repeat fixed;
+	font-family: @fontfamilysans;
+	font-weight: @regularweight;
+	font-size:16px;
+	color:#333;
+}
+
+body:after {
+    display: none;
+}
+
+
+h2 {
+	font-size:16px;
+	font-weight: @blackweight;
+	color:#111;
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: @highlightcolor;
+}
+
+strong, b {
+	font-weight: @boldweight;
+}
+
+.menucontainer .sticky-wrapper {
+	height:@menuheight!important;
+}
+
+.headerstrip {
+	width:940px;
+	margin-left:-470px;
+	position:fixed;
+	top:0;left:50%;
+	height:100px;z-index:50;
+}
+.topbar {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity:0.5;
+	position:fixed;
+	top:0;left:50%;
+	margin-left:-470px;
+	height:100px;
+	z-index:40;
+	background:#fff;
+	width:940px;
+}
+.headerimagecontainer {
+	position:fixed;
+	top:0;left:50%;
+	margin-left:-470px;
+	height:400px;
+	overflow:hidden;
+	z-index:-1;
+}
+
+.headerimagecontainer .cyclethis {
+	width:940px;
+	height:400px;
+}
+
+.headerimagecontainer .cyclethis img {
+	min-width: 100%;
+	height:auto!important;
+}
+
+.menucontainer {
+	margin-top:400px;
+}
+
+.nav {
+	font-weight: @blackweight;
+	margin:0;
+	background: #fff;
+}
+.nav ul {
+	padding:0;
+	margin:0;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.nav ul li {
+	text-align: center;
+	display:block;
+	float:left;
+	list-style: none;
+	width:187px;
+	border-right:1px solid #ccc;
+	background: #eee;
+	line-height:1;
+}
+.nav ul li:last-child {
+	border-right:none;
+	width:188px;
+}
+
+.nav ul li a {
+	display:block;
+	height:50px;
+	color: #666;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+}
+
+.nav ul li a:hover {
+	background:#111;
+	color:#eee;
+	.transition(all 0.2s ease);
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.7);
+}
+
+.nav ul li.active a {
+	background:#004788;
+	color:#eee;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.7);
+	.box-shadow();
+}
+
+ul.archivelist li.active a {
+	color: @highlightcolor;	
+}
+.nav ul ul {
+	border: none;
+}
+
+.nav.affix {
+	top:100px;
+	z-index:2;
+}
+
+#content {
+	min-height: 440px;
+}
+
+.relative {
+	position: relative;
+}
+
+.padleftright {
+	padding:0 20px;
+}
+
+.container {
+	.box-shadow(0px 0px 20px rgba(55,55,55,0.2));
+}
+
+#sticker {
+	z-index: 35;
+}
+
+.notsans {
+	font-family: @fontfamilyserif;
+	font-weight: @regularweight;
+}
+
+.highlight {
+	color: @highlightcolor;
+}
+
+.navbar .btn-navbar {
+	margin-right:22px;
+}
+.navbar-inner {
+	background:#fff;
+}
+
+
+
+.navbar-fixed-top {
+	margin-bottom:0;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.navbar .btn, .navbar .btn-group {
+	margin-top: 2px;
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+.box-shadow(none);
+}
+
+.phonenav ul {
+	margin: 10px 0 0 32px;
+	list-style: none;
+}
+.phonenav ul ul {
+	margin:0;
+}
+
+.phonenav ul li {
+	margin-top:-15px;
+}
+
+.phonenav ul li a {
+	font-family: @fontfamilyserif;	
+	color:inherit;
+}
+
+
+.phonenav ul li.active a {
+	color: @highlightcolor;
+}
+
+.newsarticle {
+	margin-bottom:50px;
+}
+
+ul.archivelist {
+	list-style: none;
+	padding:0;
+	margin:0;
+	font-family: @fontfamilyserif;
+}
+
+ul.archivelist li {
+	margin-bottom: 5px;
+	padding-bottom:5px;
+	border-bottom: 1px solid #ccc;
+	display:block;
+}
+
+ul.archivelist li a {
+	color:inherit;
+}
+
+
+.archivepin {
+	width:260px;
+}
+
+/* Form style */
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	border:1px solid #ccc;
+	.border-radius();
+	font-family: @fontfamilysans;
+	font-weight: @regularweight;
+	padding-left:15px;
+}
+input {
+	height:40px!important;
+}
+textarea {
+	padding-top:15px;
+	height:200px;
+	resize: none;
+}
+.sendbutton {
+	background:#fff;
+	border:1px solid #ccc;
+	padding:10px 20px;
+	font-family: @fontfamilysans;
+	font-weight: @regularweight;
+}
+.alert {
+	padding-top:15px;
+	padding-bottom:15px;
+	.border-radius();
+}
+
+.footer {
+	margin-top:50px;
+}
+
+.vimeovideo {
+	width:420px;
+	height:420/1.8px;
+}
+
+
+.audiojs {
+	font-family: @fontfamilyserif!important;
+}
+
+.audiojs {
+	width: 420px;
+}
+
+.audiojs .scrubber {
+	width:260px;
+}
+
+@import "mediaqueries.less";
+ 
