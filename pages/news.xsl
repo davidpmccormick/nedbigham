@@ -4,6 +4,7 @@
 
 <xsl:import href='../utilities/html5.xsl'/>
 <xsl:import href='../utilities/pagination.xsl'/>
+<xsl:import href='../utilities/archivemonths.xsl'/>
 
 <xsl:template match="data">
 	<div class="row">
@@ -23,27 +24,13 @@
 			<div class="padleftright archivepin">
 				<h2><span class="active">Recent months</span> | <a href="{$root}/news/year/{$this-year}">By year</a></h2>
 				<ul class="archivelist">
-					<xsl:apply-templates select="archivemonths/entry" />
+					<xsl:call-template name="archivemonths" />
 				</ul>
 			</div>
 		</div>
 	</div>
 </xsl:template>
 
-<xsl:template match="archivemonths/entry">
-	<xsl:variable name="yearmonth" select="substring(date/date/start,1,7)" />
-	<xsl:variable name="thepreceding" select="substring(preceding-sibling::date/date/start,1,7)" />
-	<xsl:if test="$yearmonth != $thepreceding">
-		<a href="{$root}/news/archive/{$yearmonth}">
-			<li>
-				<xsl:call-template name="format-date">
-					<xsl:with-param name="date" select="$yearmonth" />
-					<xsl:with-param name="format" select="'M'" />
-				</xsl:call-template>
-			</li>
-		</a>
-	</xsl:if>
-</xsl:template>
 
 <xsl:template match="newsindex/entry">
 	<article class="newsarticle">
