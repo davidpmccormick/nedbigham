@@ -6,6 +6,7 @@
 <xsl:import href='../utilities/years.xsl'/>
 <xsl:import href='../utilities/pagination.xsl'/>
 <xsl:import href='../utilities/excerpt.xsl'/>
+<xsl:import href='../utilities/nedpagination.xsl'/>
 
 <xsl:template match="data">
 	<div class="row">
@@ -27,13 +28,8 @@
 				<xsl:call-template name="excerpt">
 					<xsl:with-param name="path" select="newsyear/entry" />
 				</xsl:call-template>
-				<xsl:call-template name="pagination">
-					<xsl:with-param name="pagination" select="/data/newsyear/pagination" />
-					<xsl:with-param name="pagination-url">
-						<xsl:text>/news/year/</xsl:text><xsl:value-of select="$year" /><xsl:text>/$</xsl:text>
-					</xsl:with-param>
-					<xsl:with-param name="show-navigation" select="true()" />
-					<xsl:with-param name="show-range" select="10" />
+				<xsl:call-template name="nedpagination">
+					<xsl:with-param name="path" select="/data/newsyear/pagination" />
 				</xsl:call-template>
 				<h2><a href="{$root}/news">Back to recent news</a></h2>
 			</div>

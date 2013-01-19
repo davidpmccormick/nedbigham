@@ -6,6 +6,7 @@
 <xsl:import href='../utilities/pagination.xsl'/>
 <xsl:import href='../utilities/archivemonths.xsl'/>
 <xsl:import href='../utilities/excerpt.xsl'/>
+<xsl:import href='../utilities/nedpagination.xsl'/>
 
 <xsl:template match="data">
 	<div class="row">
@@ -14,11 +15,8 @@
 				<xsl:call-template name="excerpt">
 					<xsl:with-param name="path" select="newsindex/entry" />
 				</xsl:call-template>
-				<xsl:call-template name="pagination">
-					<xsl:with-param name="pagination" select="/data/newsindex/pagination" />
-					<xsl:with-param name="pagination-url" select="'/news/$'" />
-					<xsl:with-param name="show-navigation" select="true()" />
-					<xsl:with-param name="show-range" select="10" />
+				<xsl:call-template name="nedpagination">
+					<xsl:with-param name="path" select="/data/newsindex/pagination" />
 				</xsl:call-template>
 			</div>
 		</div>
