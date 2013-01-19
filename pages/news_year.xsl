@@ -5,6 +5,7 @@
 <xsl:import href='../utilities/html5.xsl'/>
 <xsl:import href='../utilities/years.xsl'/>
 <xsl:import href='../utilities/pagination.xsl'/>
+<xsl:import href='../utilities/excerpt.xsl'/>
 
 <xsl:template match="data">
 	<div class="row">
@@ -23,7 +24,9 @@
 						<h2>Select a year from the list on the right</h2>
 					</xsl:otherwise>
 				</xsl:choose>
-				<xsl:apply-templates select="newsyear/entry" />
+				<xsl:call-template name="excerpt">
+					<xsl:with-param name="path" select="newsyear/entry" />
+				</xsl:call-template>
 				<xsl:call-template name="pagination">
 					<xsl:with-param name="pagination" select="/data/newsyear/pagination" />
 					<xsl:with-param name="pagination-url">
@@ -45,22 +48,5 @@
 		</div>
 	</div>
 </xsl:template>
-
-<xsl:template match="newsyear/entry">
-	<article class="newsarticle">
-		<h2><a href="{$root}/news/view/{title/@handle}"><xsl:value-of select="title" /></a></h2>
-		<xsl:if test="date != ''">
-			<p class="notsans highlight">
-				<xsl:call-template name="format-date">
-					<xsl:with-param name="date" select="date" />
-					<xsl:with-param name="format" select="'d M, Y'" />
-				</xsl:call-template>
-			</p>
-		</xsl:if>
-		<xsl:copy-of select="excerpt/node()" />
-		<p><a class="readmore" href="{$root}/news/view/{title/@handle}">Read more&#8230;</a></p>
-	</article>
-</xsl:template>
-
 
 </xsl:stylesheet>
