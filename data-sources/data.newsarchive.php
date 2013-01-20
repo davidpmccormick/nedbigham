@@ -7,8 +7,8 @@
 		public $dsParamROOTELEMENT = 'newsarchive';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '20';
-		public $dsParamSTARTPAGE = '1';
+		public $dsParamLIMIT = '5';
+		public $dsParamSTARTPAGE = '{$page}';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamREQUIREDPARAM = '$date';
 		public $dsParamSORT = 'system:id';
@@ -21,6 +21,7 @@
 		
 
 		public $dsParamINCLUDEDELEMENTS = array(
+				'system:pagination',
 				'title',
 				'excerpt: formatted',
 				'date'
@@ -37,10 +38,10 @@
 				'name' => 'newsarchive',
 				'author' => array(
 					'name' => 'David McCormick',
-					'website' => 'http://localhost:8888/ned',
+					'website' => 'http://localhost:8888/nedbigham',
 					'email' => 'davidpmccormick@gmail.com'),
 				'version' => 'Symphony 2.3',
-				'release-date' => '2012-10-26T16:15:10+00:00'
+				'release-date' => '2013-01-20T16:37:07+00:00'
 			);
 		}
 

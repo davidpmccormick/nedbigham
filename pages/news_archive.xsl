@@ -3,8 +3,10 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:import href='../utilities/html5.xsl'/>
+<xsl:import href='../utilities/pagination.xsl'/>
 <xsl:import href='../utilities/archivemonths.xsl'/>
 <xsl:import href='../utilities/excerpt.xsl'/>
+<xsl:import href='../utilities/nedpagination.xsl'/>
 
 <xsl:template match="data">
 	<div class="row">
@@ -25,6 +27,9 @@
 				</xsl:choose>
 				<xsl:call-template name="excerpt">
 					<xsl:with-param name="path" select="newsarchive/entry" />
+				</xsl:call-template>
+				<xsl:call-template name="nedpagination">
+					<xsl:with-param name="path" select="/data/newsarchive/pagination" />
 				</xsl:call-template>
 				<h2><a href="{$root}/news">Back to recent news</a></h2>
 			</div>
