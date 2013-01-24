@@ -23,7 +23,6 @@
 			
 			<script type="text/javascript" src="//use.typekit.net/njz2hlc.js"></script>
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-			
 
 			<link rel="shortcut icon" href="/favicon.ico" />
 			<link rel="icon" type="images/png" href="{$workspace}/assets/images/favicon.png" />
@@ -32,8 +31,7 @@
 			<link rel="stylesheet" media="screen" href="{$workspace}/css/ned.css" />
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-			<script src="{$workspace}/js/jquery.sticky.js"></script>
-			<script src="{$workspace}/js/froogaloop.js"></script>
+			<script src="{$workspace}/js/master-ck.js"></script>
 			
 			<xsl:comment><![CDATA[[if lt IE 9]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/html5shiv.min.js"></script><![endif]]]></xsl:comment>
 			<xsl:comment><![CDATA[[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="]]><xsl:value-of select="$root"/><![CDATA[/workspace/js/selectivizr.min.js"></script><![endif]]]></xsl:comment>
@@ -100,23 +98,15 @@
 					</footer>
 					
 				</section>
-				
 			</div> <!-- end .container -->
-			
-			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-			<script src="{$workspace}/js/bootstrap.min.js"></script>
-			<script src="{$workspace}/js/jquery.cycle.min.js"></script>
-			<script src="{$workspace}/js/ned.js"></script>
-			<script src="{$workspace}/js/onmediaquery.min.js"></script>
-			<script src="{$workspace}/js/mqchange.js"></script>
-			<script src="{$workspace}/js/modernizr.js"></script>
+						
 			<!-- only load audio js files on listen page -->
 			<xsl:if test="$current-page-id = 3">
 				<script src="{$workspace}/js/audiojs/audio.min.js"></script>
 				<script src="{$workspace}/js/nedaudio.js"></script>
 			</xsl:if>
-			<script type="text/javascript">
 			
+			<script type="text/javascript">
 			  var _gaq = _gaq || [];
 			  _gaq.push(['_setAccount', 'UA-37386011-1']);
 			  _gaq.push(['_trackPageview']);
@@ -126,7 +116,6 @@
 			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			  })();
-			
 			</script>
 		</body>
 	</html>
