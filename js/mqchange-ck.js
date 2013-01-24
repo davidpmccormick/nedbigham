@@ -1,1 +1,0 @@
-/*global opacityAndShadow *//*global MQ */var queries=[{context:"phone",match:function(){},unmatch:function(){}},{context:"largedesktop",match:function(){opacityAndShadow()},unmatch:function(){opacityAndShadow()}}];MQ.init(queries);
