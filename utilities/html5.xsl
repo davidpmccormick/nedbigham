@@ -26,8 +26,6 @@
 
 			<link rel="shortcut icon" href="/favicon.ico" />
 			<link rel="icon" type="images/png" href="{$workspace}/assets/images/favicon.png" />
-			<link rel="stylesheet" media="screen" href="{$workspace}/css/bootstrap.min.css" />
-			<link rel="stylesheet" media="screen" href="{$workspace}/css/bootstrap-responsive.min.css" />
 			<link rel="stylesheet" media="screen" href="{$workspace}/css/ned.css" />
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -96,7 +94,6 @@
 						<small style="float:left;margin-bottom:20px;">&#169;<xsl:value-of select="$this-year"/> Ned Bigham</small>
 						<small style="float:right;margin-bottom:20px;">Site by <a href="http://www.sumnoise.com">DMC</a></small>
 					</footer>
-					
 				</section>
 			</div> <!-- end .container -->
 						
