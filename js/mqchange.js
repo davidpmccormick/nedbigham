@@ -25,4 +25,6 @@ var queries = [
 ];
 
 // Go!
-MQ.init(queries);
+$(document).ready(function(){
+  MQ.init(queries);  
+});
