@@ -92,7 +92,7 @@
 	
 					<footer class="footer padleftright clearfix" style="background:#fff!important;">
 						<small style="float:left;margin-bottom:20px;">&#169;<xsl:value-of select="$this-year"/> Ned Bigham</small>
-						<small style="float:right;margin-bottom:20px;">Site by <a href="http://www.sumnoise.com">DMC</a></small>
+						<small style="float:right;margin-bottom:20px;">Site by <a href="http://www.sumnoise.com">dmc</a></small>
 					</footer>
 				</section>
 			</div> <!-- end .container -->
